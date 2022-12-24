@@ -17,12 +17,13 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 - [x] Start project
 - [ ] Track class
   - [x] Parse track from line
-  - [ ] Handle track with artist
+  - [x] Handle track with artist
 - [ ] Parse file
   - [ ] Single artist single album
   - [ ] Single artist multiple albums
   - [ ] Various artists album
   - [ ] Various artists series
+  - [ ] Split artist collaborations
 - [ ] Compute release averages
 - [ ] Produce json
 - [ ] Produce ranking list
