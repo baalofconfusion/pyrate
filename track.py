@@ -2,9 +2,10 @@ import re
 
 
 class Track:
-    def __init__(self, text, rating=None):
+    def __init__(self, text, rating=None, artist=None):
         self.title = text
         self.rating = rating
+        self.artist = artist
 
     @property
     def title(self):
@@ -27,17 +28,33 @@ class Track:
         else:
             self._rating = float(rating)
 
+    @property
+    def artist(self):
+        return self._artist
+
+    @artist.setter
+    def artist(self, artist):
+        if not artist:
+            self._artist = None
+        else:
+            self._artist = artist
+
 
 def main():
-    track = Track("\t\t1. Destination")
-    print(track)
+    # track = Track("\t\t1. Destination")
+    parse_line("****+\t\t1. Malign -- Skin & Lye")
+    parse_line("\t\t1. Destination")
+    # print(track)
 
 
 def parse_line(line):
-    if match := re.search(r"([\*\+]*)\t\t(\d+)\. (.*)", line):
-        # group 2 if the track number which is not being used right now
+    if match := re.search(r"([\*\+]*)\t\t(\d+)\. (?:(?:(.*?)(?: -- )(.*))|(.*))", line):
+        # group 2 is the track number which is not being used right now
         rating = calc_rating(match.group(1))
-        return Track(match.group(3), rating)
+        title = match.group(4)
+        if title == None:
+            title = match.group(5)
+        return Track(title, rating, match.group(3))
     return None
 
 
