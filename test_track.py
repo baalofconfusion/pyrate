@@ -27,8 +27,13 @@ def test_init():
     assert track.artist == None
 
 
-def test_parse():
+def test_parse_no_track():
     assert parse_line("") == None
+    assert parse_line("Sisters Of Mercy") == None
+    assert parse_line("\tFear Of A Blank Planet") == None
+
+
+def test_parse():
     track = parse_line("\t\t1. Destination")
     assert track.title == "Destination"
     assert track.rating == None
