@@ -19,9 +19,10 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
   - [x] Parse track from line
   - [x] Handle track with artist
 - [ ] Album class
-  - [ ] Add track
+  - [x] Add track
+  - [ ] Calculate average rating
 - [ ] Parse file
-  - [ ] Single artist single album
+  - [x] Single artist single album
   - [ ] Single artist multiple albums
   - [ ] Various artists album
   - [ ] Various artists series
