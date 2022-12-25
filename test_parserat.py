@@ -17,3 +17,6 @@ def test_single():
     assert album.title == "Abort"
     track_list = album.track_list
     assert len(track_list) == 12
+    track = track_list(4)
+    assert track.title == "Joyride (I Saw The Film)"
+    assert track.rating == 5.0
