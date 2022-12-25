@@ -18,6 +18,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 - [ ] Track class
   - [x] Parse track from line
   - [x] Handle track with artist
+- [ ] Album class
+  - [ ] Add track
 - [ ] Parse file
   - [ ] Single artist single album
   - [ ] Single artist multiple albums
