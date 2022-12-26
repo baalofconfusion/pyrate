@@ -46,7 +46,7 @@ def test_parse_artist():
     assert track.artist == "Agathodaimon"
 
 
-def test_single():
+def test_single_artist():
     albums = parse("./test_files/Tribe.txt")
     assert albums is not None
     assert len(albums) == 1
@@ -58,3 +58,25 @@ def test_single():
     track = track_list[4]
     assert track.title == "Joyride (I Saw The Film)"
     assert track.rating == 5.0
+
+
+def test_multiple_album():
+    albums = parse("./test_files/Curve.txt")
+    assert albums is not None
+    assert len(albums) == 22
+    album = albums[0]
+    assert album.artist == "Curve"
+    assert album.title == "Blindfold"
+    track_list = album.track_list
+    assert len(track_list) == 4
+    track = track_list[1]
+    assert track.title == "I Speak Your Every Word"
+    assert track.rating == 4.0
+    album = albums[11]
+    assert album.artist == "Curve"
+    assert album.title == "Peel Session Sept 17, 1993"
+    track_list = album.track_list
+    assert len(track_list) == 1
+    track = track_list[0]
+    assert track.title == "Turkey Crossing"
+    assert track.rating == 3.5

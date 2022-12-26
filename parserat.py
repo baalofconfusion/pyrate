@@ -13,6 +13,7 @@ class State:
     def end(self):
         if self.album:
             self.album_list.append(self.album)
+        self.album = None
 
     def add_track(self, track):
         if not self.album:
@@ -42,6 +43,7 @@ def parse(filename):
                 if track:
                     state.add_track(track)
                 elif line.startswith("\t"):
+                    state.end()
                     state.set_name2(line.strip())
                 else:
                     state.set_name1(line)
