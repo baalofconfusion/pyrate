@@ -3,6 +3,8 @@ class Album:
         self.track_list = []
         self.title = title
         self.artist = artist
+        # Not exposing a setter for the rating property
+        self._rating = None
 
     @property
     def title(self):
@@ -23,6 +25,10 @@ class Album:
         if not artist:
             artist = "Various Artists"
         self._artist = artist
+
+    @property
+    def rating(self):
+        return self._rating
 
     def add_track(self, track):
         if track:

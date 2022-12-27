@@ -3,7 +3,6 @@
 
 Project for managing music ratings in my collection.
 
-
 ### Virtual Environment:
 When working in Visual Studio Code on Windows it is useful to create a virtual environment
 
@@ -23,7 +22,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
   - [ ] Calculate average rating
 - [ ] Parse file
   - [x] Single artist single album
-  - [ ] Single artist multiple albums
+  - [x] Single artist multiple albums
   - [ ] Various artists album
   - [ ] Various artists series
   - [ ] Split artist collaborations
