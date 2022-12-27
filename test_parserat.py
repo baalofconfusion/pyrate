@@ -90,4 +90,4 @@ def test_comp():
     album = albums[0]
     assert album.artist == "Various Artists"
     assert album.title == "Gothic Rock"
-
+    assert round(album.rating, 4) == 3.7105
