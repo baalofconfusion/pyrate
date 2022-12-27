@@ -22,14 +22,13 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
   - [x] Handle track with artist
 - [ ] Album class
   - [x] Add track
-  - [ ] Calculate average rating
+  - [x] Calculate average rating
 - [ ] Parse file
   - [x] Single artist single album
   - [x] Single artist multiple albums
   - [ ] Various artists album
   - [ ] Various artists series
   - [ ] Split artist collaborations
-- [ ] Compute release averages
-- [ ] Produce json
 - [ ] Produce ranking list
-- [ ] Inject ratings into ratemymusic.com
+- [ ] Produce json
+- [ ] Inject ratings into rateyourmusic.com
