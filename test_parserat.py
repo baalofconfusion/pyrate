@@ -81,3 +81,13 @@ def test_multiple_album():
     track = track_list[0]
     assert track.title == "Turkey Crossing"
     assert track.rating == 3.5
+
+
+def test_comp():
+    albums = parse("./test_files/GothicRock.txt")
+    assert albums is not None
+    assert len(albums) == 1
+    album = albums[0]
+    assert album.artist == "Various Artists"
+    assert album.title == "Gothic Rock"
+

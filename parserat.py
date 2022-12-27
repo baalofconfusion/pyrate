@@ -18,7 +18,12 @@ class State:
 
     def add_track(self, track):
         if not self.album:
-            self.album = Album(self.name2, self.name1)
+            # As a first aproximation, make the assumption that an intial track with an
+            # artist means this is a various artists compilation
+            if track.artist:
+                self.album = Album(self.name1)
+            else:
+                self.album = Album(self.name2, self.name1)
         self.album.add_track(track)
 
     def set_name1(self, text):
