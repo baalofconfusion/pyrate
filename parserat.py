@@ -12,6 +12,7 @@ class State:
 
     def end(self):
         if self.album:
+            self.album.calc_rating()
             self.album_list.append(self.album)
         self.album = None
 

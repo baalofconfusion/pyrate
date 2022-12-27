@@ -72,6 +72,7 @@ def test_multiple_album():
     track = track_list[1]
     assert track.title == "I Speak Your Every Word"
     assert track.rating == 4.0
+    assert album.rating == 4.25
     album = albums[11]
     assert album.artist == "Curve"
     assert album.title == "Peel Session Sept 17, 1993"
