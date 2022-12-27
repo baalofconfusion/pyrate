@@ -3,6 +3,9 @@
 
 Project for managing music ratings in my collection.
 
+Sometime around 1990 I started tracking ratings for my CD collection using a text file.
+
+
 ### Virtual Environment:
 When working in Visual Studio Code on Windows it is useful to create a virtual environment
 
