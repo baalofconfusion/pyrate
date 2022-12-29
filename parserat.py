@@ -21,7 +21,10 @@ class State:
             # As a first aproximation, make the assumption that an intial track with an
             # artist means this is a various artists compilation
             if track.artist:
-                self.album = Album(self.name1)
+                name = self.name1
+                if self.name2:
+                    name = name + " - " + self.name2
+                self.album = Album(name)
             else:
                 self.album = Album(self.name2, self.name1)
         self.album.add_track(track)
@@ -34,7 +37,7 @@ class State:
 
 
 def main():
-    parse("./test_files/Tribe.txt")
+    parse("./test_files/DionFortune.txt")
 
 
 def parse(filename):

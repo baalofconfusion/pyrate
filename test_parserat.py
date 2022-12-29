@@ -91,3 +91,17 @@ def test_comp():
     assert album.artist == "Various Artists"
     assert album.title == "Gothic Rock"
     assert round(album.rating, 4) == 3.7105
+
+
+def test_comp_series():
+    albums = parse("./test_files/DionFortune.txt")
+    assert albums is not None
+    assert len(albums) == 2
+    album = albums[0]
+    assert album.artist == "Various Artists"
+    assert album.title == "Dion Fortune Sampler - Vol 1"
+    assert round(album.rating, 4) == 2.1818
+    album = albums[1]
+    assert album.artist == "Various Artists"
+    assert album.title == "Dion Fortune Sampler - Vol 2"
+    assert round(album.rating, 4) == 3.5
