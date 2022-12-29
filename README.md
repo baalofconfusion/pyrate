@@ -26,9 +26,11 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 - [ ] Parse file
   - [x] Single artist single album
   - [x] Single artist multiple albums
-  - [ ] Various artists album
+  - [x] Various artists album
   - [ ] Various artists series
   - [ ] Split artist collaborations
 - [ ] Produce ranking list
 - [ ] Produce json
+- [ ] Additional attributes (compilation, single, EP, etc.)
+- [ ] Calculate median and mode
 - [ ] Inject ratings into rateyourmusic.com

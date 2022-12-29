@@ -30,6 +30,13 @@ class Album:
     def rating(self):
         return self._rating
 
+    @property
+    def sort_rating(self):
+        if self._rating is None:
+            return 0.0
+        else:
+            return self._rating
+
     def add_track(self, track):
         if track:
             self.track_list.append(track)
