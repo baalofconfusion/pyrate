@@ -19,7 +19,7 @@ class State:
     def add_track(self, track):
         if not self.album:
             # As a first aproximation, make the assumption that an intial track with an
-            # artist means this is a various artists compilation
+            # artist means this is a various artists compilation. Will not work for DJ releases.
             if track.artist:
                 name = self.name1
                 if self.name2:
