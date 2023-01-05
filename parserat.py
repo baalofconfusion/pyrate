@@ -61,7 +61,7 @@ def parse(filename):
 
 
 def parse_line(line):
-    if match := re.search(r"([\*\+]*)\t\t(\d+)\. (?:(?:(.*?)(?: -- )(.*))|(.*))", line):
+    if match := re.search(r"([\*\+]*)\t\t(\d+[a-z]*)\. (?:(?:(.*?)(?: -- )(.*))|(.*))", line):
         # group 2 is the track number which is not being used right now
         rating = parse_rating(match.group(1))
         title = match.group(4)

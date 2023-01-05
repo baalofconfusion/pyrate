@@ -105,3 +105,24 @@ def test_comp_series():
     assert album.artist == "Various Artists"
     assert album.title == "Dion Fortune Sampler - Vol 2"
     assert round(album.rating, 4) == 3.5
+
+
+def test_non_int_track():
+    albums = parse("./test_files/Yes.txt")
+    assert albums is not None
+    assert len(albums) == 3
+    album = albums[0]
+    assert album.artist == "Yes"
+    assert album.title == "The Yes Album"
+    track_list = album.track_list
+    assert len(track_list) == 9
+    album = albums[1]
+    assert album.artist == "Yes"
+    assert album.title == "Fragile"
+    track_list = album.track_list
+    assert len(track_list) == 10
+    album = albums[2]
+    assert album.artist == "Yes"
+    assert album.title == "Close To The Edge"
+    track_list = album.track_list
+    assert len(track_list) == 3
