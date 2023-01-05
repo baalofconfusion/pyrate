@@ -4,7 +4,7 @@ from dumprat import dump_ratings
 
 
 def main():
-    collection = load_collection("./test_files/TrackRatings.txt")
+    collection = load_collection("./test_files/MiniCollection.txt")
     sort_collection(collection)
     write_collection(collection, "sorted.txt")
 
