@@ -72,6 +72,7 @@ def test_multiple_album():
     track = track_list[1]
     assert track.title == "I Speak Your Every Word"
     assert track.rating == 4.0
+    assert album.rating == 4.25
     album = albums[11]
     assert album.artist == "Curve"
     assert album.title == "Peel Session Sept 17, 1993"
@@ -80,3 +81,48 @@ def test_multiple_album():
     track = track_list[0]
     assert track.title == "Turkey Crossing"
     assert track.rating == 3.5
+
+
+def test_comp():
+    albums = parse("./test_files/GothicRock.txt")
+    assert albums is not None
+    assert len(albums) == 1
+    album = albums[0]
+    assert album.artist == "Various Artists"
+    assert album.title == "Gothic Rock"
+    assert round(album.rating, 4) == 3.7105
+
+
+def test_comp_series():
+    albums = parse("./test_files/DionFortune.txt")
+    assert albums is not None
+    assert len(albums) == 2
+    album = albums[0]
+    assert album.artist == "Various Artists"
+    assert album.title == "Dion Fortune Sampler - Vol 1"
+    assert round(album.rating, 4) == 2.1818
+    album = albums[1]
+    assert album.artist == "Various Artists"
+    assert album.title == "Dion Fortune Sampler - Vol 2"
+    assert round(album.rating, 4) == 3.5
+
+
+def test_non_int_track():
+    albums = parse("./test_files/Yes.txt")
+    assert albums is not None
+    assert len(albums) == 3
+    album = albums[0]
+    assert album.artist == "Yes"
+    assert album.title == "The Yes Album"
+    track_list = album.track_list
+    assert len(track_list) == 9
+    album = albums[1]
+    assert album.artist == "Yes"
+    assert album.title == "Fragile"
+    track_list = album.track_list
+    assert len(track_list) == 10
+    album = albums[2]
+    assert album.artist == "Yes"
+    assert album.title == "Close To The Edge"
+    track_list = album.track_list
+    assert len(track_list) == 3

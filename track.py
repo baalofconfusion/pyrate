@@ -1,3 +1,6 @@
+import json
+
+
 class Track:
     def __init__(self, text, rating=None, artist=None):
         self.title = text
@@ -36,10 +39,16 @@ class Track:
         else:
             self._artist = artist
 
+    def toJson(self):
+        return json.dumps(self, default=lambda o: o.__dict__)
+
 
 def main():
-    track = Track("\t\t1. Destination")
-    print(track)
+    track = Track("Destination")
+    trackData = json.dumps(track.toJson(), indent=2)
+    print(trackData)
+    reloadTrack = json.loads(trackData)
+    print(reloadTrack)
 
 
 if __name__ == "__main__":

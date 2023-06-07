@@ -30,9 +30,28 @@ class Album:
     def rating(self):
         return self._rating
 
+    @property
+    def sort_rating(self):
+        if self._rating is None:
+            return 0.0
+        else:
+            return self._rating
+
     def add_track(self, track):
         if track:
             self.track_list.append(track)
+
+    def calc_rating(self):
+        count = 0
+        sum = 0
+        for track in self.track_list:
+            if track.rating:
+                count = count + 1
+                sum = sum + track.rating
+        if count > 0:
+            self._rating = sum / count
+        else:
+            self._rating = None
 
 
 def main():

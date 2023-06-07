@@ -12,12 +12,21 @@ class State:
 
     def end(self):
         if self.album:
+            self.album.calc_rating()
             self.album_list.append(self.album)
         self.album = None
 
     def add_track(self, track):
         if not self.album:
-            self.album = Album(self.name2, self.name1)
+            # As a first aproximation, make the assumption that an intial track with an
+            # artist means this is a various artists compilation. Will not work for DJ releases.
+            if track.artist:
+                name = self.name1
+                if self.name2:
+                    name = name + " - " + self.name2
+                self.album = Album(name)
+            else:
+                self.album = Album(self.name2, self.name1)
         self.album.add_track(track)
 
     def set_name1(self, text):
@@ -28,7 +37,7 @@ class State:
 
 
 def main():
-    parse("./test_files/Tribe.txt")
+    parse("./test_files/DionFortune.txt")
 
 
 def parse(filename):
@@ -52,7 +61,8 @@ def parse(filename):
 
 
 def parse_line(line):
-    if match := re.search(r"([\*\+]*)\t\t(\d+)\. (?:(?:(.*?)(?: -- )(.*))|(.*))", line):
+    s = r"([\*\+]*)\t\t(\d+[a-z]*)\. (?:(?:(.*?)(?: -- )(.*))|(.*))"
+    if match := re.search(s, line):
         # group 2 is the track number which is not being used right now
         rating = parse_rating(match.group(1))
         title = match.group(4)
