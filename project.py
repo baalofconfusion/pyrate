@@ -1,6 +1,6 @@
 from parserat import parse
 from sortrat import sort_average
-from dumprat import dump_ratings
+import dumprat
 
 
 def main():
@@ -18,7 +18,7 @@ def sort_collection(collection):
 
 
 def write_collection(collection, filename):
-    dump_ratings(collection, filename)
+    dumprat.dump_ratings(collection, filename)
 
 
 if __name__ == "__main__":
