@@ -1,5 +1,6 @@
 # pyrate
-## Description:
+#### Video demo: 
+#### Description:
 
 ### A Python project for managing music ratings in my collection.
 
@@ -9,7 +10,7 @@ In 1988 I started rating albums in my CD collection. For each album I would cut 
 
 Sometime around 1990 I started tracking my ratings in a text file in addition to the physical sheets. I have maintained this file continuously since then.
 
-In 2007 I created an account on rateyourmusic.com with the intention of possibly migrating my ratings into that site, but for multiple reasons I have not done so. The first reason is that RYM does not calculate a personal average rating for each release; they only calculate an average rating across all member ratings on the site. Another reason is the sheer amount of time it would take to transfer all the data given my track rating file containing over 17,000 releases.
+In 2007 I created an account on rateyourmusic.com with the intention of possibly migrating my ratings into that site, but for multiple reasons I have not done so. The first reason is that RYM does not calculate a personal average rating for each release; they only calculate an average rating across all member ratings on the site. Another reason is the sheer amount of time it would take to transfer all the data given my track rating file containing over 15,000 releases.
 
 This project started as an attempt to answer some questions for myself: What albums do I rate the most highly based on the track ratings, and how well does that correspond to which album I queue up most frequently. Does my perception of what are my favorites actually match up to what I've rated the most highly?
 
