@@ -1,5 +1,5 @@
 # pyrate
-#### Video demo: 
+#### Video demo: https://youtu.be/5XFAU6CNsVM
 #### Description:
 
 ### A Python project for managing music ratings in my collection.
